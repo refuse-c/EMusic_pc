@@ -2,14 +2,14 @@
  * @Author: REFUSE_C
  * @Date: 2020-08-24 09:03:36
  * @LastEditors: REFUSE_C
- * @LastEditTime: 2021-02-26 19:42:44
+ * @LastEditTime: 2021-03-04 23:15:29
 //  * @Description: 
  */
 import React, { Component } from "react";
 import Header from 'pages/header/Header';
 import { Route } from 'react-router-dom';
 import styles from './css/index.module.scss';
-import { setLocal, reLocal, routerJump, setSession } from 'common/utils/tools';
+import { reLocal, routerJump, setSession } from 'common/utils/tools';
 import { logout, loginStatus } from 'common/api/api';
 import { message } from 'antd';
 import { userPlaylist } from 'common/api/user';
@@ -50,7 +50,7 @@ class Index extends Component {
         cookie.remove('cookie');
         return false;
       };
-      setLocal('userInfo', data.profile)
+      // setLocal('userInfo', data.profile)
       const uid = data.profile.userId;
       if (uid) {
         this.queryUserPlaylist(uid);

@@ -2,7 +2,7 @@
  * @Author: REFUSE_C
  * @Date: 2020-08-19 09:28:56
  * @LastEditors: REFUSE_C
- * @LastEditTime: 2021-02-26 19:42:56
+ * @LastEditTime: 2021-03-11 19:49:22
  * @Description: 基础网络请求
  */
 import { message } from 'antd';
@@ -53,7 +53,6 @@ Axios.interceptors.response.use(
 
 export const postRequest = (path, params = {}) => {
   params.timestamp = (new Date()).getTime();
-  // params.cookie = getLocal('cookie') ? getLocal('cookie') : ''
   return new Promise((resolve, reject) => {
     Axios.post(path, params).then(res => {
       resolve(res);
@@ -65,7 +64,6 @@ export const postRequest = (path, params = {}) => {
 
 export const getRequest = (path, params = {}) => {
   params.timestamp = (new Date()).getTime();
-  // params.cookie = getLocal('cookie') ? getLocal('cookie') : ''
   return new Promise((resolve, reject) => {
     Axios.get(path, { params }).then(res => {
       resolve(res);
